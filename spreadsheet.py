@@ -1,4 +1,6 @@
 import openpyxl
+import re
+import workingmodel
 
 def findMatch(state,district,county):
     state = state.lower()
@@ -12,22 +14,23 @@ def findMatch(state,district,county):
         reqLoc=[]
         s = sheet.cell(row=i, column=2).value.strip().lower()
         d = sheet.cell(row=i, column=3).value.strip().lower()
-        c = sheet.cell(row=i, column=4).value.strip().lower()
-        # print(c, 'and', county)
+        c = sheet.cell(row=i, column=4).value.strip().lower().split()[0]
+        print(c, 'and', county)
         # if state==s and district==d and county==c:
         #     print("found state and district.")
         #     break
-        if state==s and d==district and county in c:
+        if state==s and d==district and (county in c):
             print("found")
             for j in {9,12,14,22,23}:
                 cell = sheet.cell(row=i,column=j)
                 reqLoc.append(cell.value)
                 print(cell.value)
             break
+        workingmodel.app(reqLoc)
     return reqLoc
 
 
-# st = 'Assam'
-# di = 'Baksa'
-# co = 'Simla'
-# print(findMatch(st,di,co))
+st = 'odisha'
+di = 'khorda'
+co = 'bhubaneswar'
+print(findMatch(st,di,co))
