@@ -1,36 +1,3 @@
-''''#from tkinter import*
-
-#theclique_root=Tk();
-import tkinter as tk
-from tkinter import messagebox
-
-def submit_village():
-    village = village_entry.get()
-    if village.strip():
-        messagebox.showinfo("Village Submitted", f"You entered: {village}")
-    else:
-        messagebox.showwarning("Input Error", "Please enter a village name.")
-
-# Create the main application window
-root = tk.Tk()
-root.title("Village Name Input")
-root.geometry("300x150")  # Width x Height
-
-# Label
-label = tk.Label(root, text="Enter Village Name:")
-label.pack(pady=10)
-
-# Entry widget
-village_entry = tk.Entry(root, width=30)
-village_entry.pack()
-
-# Submit button
-submit_button = tk.Button(root, text="Submit", command=submit_village)
-submit_button.pack(pady=10)
-
-# Run the application
-root.mainloop()'''
-
 
 import streamlit as st
 
@@ -54,5 +21,5 @@ with st.container():
         withincol1, withincol2, withincol3 = st.columns(3)
         with withincol2:
             if st.button("Check"):
-                st.write("Safe Water Found")
+               # st.write("Safe Water Found")
 
