@@ -15,11 +15,23 @@ with st.container():
     st.write("---")
     col1, col2, col3 = st.columns(3)
     with col2:
+        if st.button("Use Current Location \U0001F4CD"):
+
+
         st.subheader("Enter Location Details: ")
+        state_name=st.text_input("Enter State: ")
         district_name=st.text_input("Enter District: ")
-        village_name=st.text_input("Enter Village: ")
+        county_name=st.text_input("Enter County: ")
         withincol1, withincol2, withincol3 = st.columns(3)
         with withincol2:
             if st.button("Check"):
+<<<<<<< Updated upstream
                # st.write("Safe Water Found")
 
+=======
+                match=test.findMatch(district_name)
+
+#--OUTPUT--
+with st.container():
+    st.write("---")                
+>>>>>>> Stashed changes

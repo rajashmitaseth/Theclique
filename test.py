@@ -47,7 +47,7 @@ def findMatch(location):
     with open('book2.csv', mode='r', newline='') as csvfile:
         spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
         for row in spamreader:
-            if row[3] == location:
+            if location in row:
                 print(row)
             #print(', '.join(row))
         
