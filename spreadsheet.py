@@ -17,9 +17,9 @@ def findMatch(state,district,county):
         # if state==s and district==d and county==c:
         #     print("found state and district.")
         #     break
-        if state==s and d==district and county==c:
+        if state==s and d==district and county in c:
             print("found")
-            for j in range(1, 24):
+            for j in {9,12,14,22,23}:
                 cell = sheet.cell(row=i,column=j)
                 reqLoc.append(cell.value)
                 print(cell.value)
