@@ -26,12 +26,19 @@ with st.container():
         with withincol2:
             if st.button("Check"):
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                # st.write("Safe Water Found")
 
 =======
+=======
+>>>>>>> Stashed changes
                 match=test.findMatch(district_name)
 
 #--OUTPUT--
 with st.container():
+<<<<<<< Updated upstream
+    st.write("---")                
+>>>>>>> Stashed changes
+=======
     st.write("---")                
 >>>>>>> Stashed changes
