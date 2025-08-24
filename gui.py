@@ -1,6 +1,6 @@
 
 import streamlit as st
-import test
+import spreadsheet
 
 #--HEADER SECTION--
 with st.container():
@@ -22,4 +22,4 @@ with st.container():
         withincol1, withincol2, withincol3 = st.columns(3)
         with withincol2:
             if st.button("Check"):
-                test.findMatch(district_name)
+                spreadsheet.findMatch(state,district,location)
