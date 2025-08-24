@@ -1,5 +1,6 @@
 
 import streamlit as st
+import test
 
 #--HEADER SECTION--
 with st.container():
@@ -21,5 +22,4 @@ with st.container():
         withincol1, withincol2, withincol3 = st.columns(3)
         with withincol2:
             if st.button("Check"):
-               # st.write("Safe Water Found")
-
+                test.findMatch(district_name)

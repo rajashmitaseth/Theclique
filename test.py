@@ -2,6 +2,7 @@ import psycopg2
 import pandas as pd
 import csv
 import openpyxl
+import gui
 
 connection = psycopg2.connect(
     host = "localhost",
@@ -42,11 +43,13 @@ import requests
     #     row.get("Nitrate tested value (mg/l)")
     # ))
 
-with open('book2.csv', mode='r', newline='') as csvfile:
-    spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-    for row in spamreader:
-        print(row)
-        #print(', '.join(row))
+def findMatch(location):
+    with open('book2.csv', mode='r', newline='') as csvfile:
+        spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+        for row in spamreader:
+            if row[3] == location:
+                print(row)
+            #print(', '.join(row))
         
 #not working
 # path = "book1.xlsx"
