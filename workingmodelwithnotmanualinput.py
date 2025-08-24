@@ -44,3 +44,5 @@ def app(reqLoc):
         st.write("### Suggested uses:")
         for use in suggest_alternatives(prediction):
             st.write(f"- {use}")
+
+# app([5,7,9,3,4])

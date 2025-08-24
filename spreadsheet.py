@@ -26,11 +26,11 @@ def findMatch(state,district,county):
                 reqLoc.append(cell.value)
                 print(cell.value)
             break
-    print(reqLoc)
+    workingmodelwithnotmanualinput.app(reqLoc)
     return reqLoc
 
 
-st = 'odisha'
-di = 'khorda'
-co = 'bhubaneswar'
+st = 'assam'
+di = 'baksa'
+co = 'simla'
 print(findMatch(st,di,co))

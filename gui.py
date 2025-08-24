@@ -19,6 +19,7 @@ with st.container():
     with col2:
         if st.button("Use Current Location \U0001F4CD"):
             arr = locationcontroller.getLocation()
+            #result = len(spreadsheet.findMatch(arr[0],arr[1],arr[2]))
             if(len(spreadsheet.findMatch(arr[0],arr[1],arr[2])) == 0):
                 st.subheader("Location Not Found")
         st.subheader("Enter Location Details: ")
@@ -28,8 +29,11 @@ with st.container():
         withincol1, withincol2, withincol3 = st.columns(3)
         with withincol2:
             if st.button("Check"):
+                #result=len(spreadsheet.findMatch(state_name,district_name,county_name))
                 if(len(spreadsheet.findMatch(state_name,district_name,county_name)) == 0):
                     st.subheader("Location Not Found")
 
-
+# with st.container():
+#     if result==0:
+#         st.subheader("Location not found")
             
