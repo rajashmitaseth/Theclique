@@ -1,6 +1,6 @@
 import openpyxl
 import re
-import workingmodel
+import workingmodelwithnotmanualinput 
 
 def findMatch(state,district,county):
     state = state.lower()
@@ -15,7 +15,7 @@ def findMatch(state,district,county):
         s = sheet.cell(row=i, column=2).value.strip().lower()
         d = sheet.cell(row=i, column=3).value.strip().lower()
         c = sheet.cell(row=i, column=4).value.strip().lower().split()[0]
-        print(c, 'and', county)
+        #print(c, 'and', county)
         # if state==s and district==d and county==c:
         #     print("found state and district.")
         #     break
@@ -26,7 +26,7 @@ def findMatch(state,district,county):
                 reqLoc.append(cell.value)
                 print(cell.value)
             break
-        workingmodel.app(reqLoc)
+        workingmodelwithnotmanualinput.app(reqLoc)
     return reqLoc
 
 
