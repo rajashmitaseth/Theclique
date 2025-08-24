@@ -1,23 +1,33 @@
 import openpyxl
 
-state = 'Bihar'
-district = 'Buxar'
-location = 'Chausa' 
-
-def findMatch(state,district,location):
+def findMatch(state,district,county):
+    state = state.lower()
+    district = district.lower()
+    county = county.lower()
+    print(district)
     path = "book1.xlsx"
     wb = openpyxl.load_workbook(path)
     sheet = wb.active
-    for i in range(1, 16976):
+    for i in range(1, sheet.max_row):
         reqLoc=[]
-        s = sheet.cell(row=i, column=2)
-        d = sheet.cell(row=i, column=3)
-        l = sheet.cell(row=i, column=4)
-        if (s.value == state) and (d.value == district) and (l.value == location):
+        s = sheet.cell(row=i, column=2).value.strip().lower()
+        d = sheet.cell(row=i, column=3).value.strip().lower()
+        c = sheet.cell(row=i, column=4).value.strip().lower()
+        # print(c, 'and', county)
+        # if state==s and district==d and county==c:
+        #     print("found state and district.")
+        #     break
+        if state==s and d==district and county==c:
+            print("found")
             for j in range(1, 24):
                 cell = sheet.cell(row=i,column=j)
-                reqLoc.append(cell)
+                reqLoc.append(cell.value)
                 print(cell.value)
+            break
     return reqLoc
 
-findMatch(state,district,location)
+
+# st = 'Assam'
+# di = 'Baksa'
+# co = 'Simla'
+# print(findMatch(st,di,co))
