@@ -1,27 +1,27 @@
-import psycopg2
-import pandas as pd
+# import psycopg2
+# import pandas as pd
 import csv
-import openpyxl
+# import openpyxl
 import gui
 
-connection = psycopg2.connect(
-    host = "localhost",
-    user = "postgres",
-    database = "waterdata",
-    password = "2006",
-    port = 5432
-)
+# connection = psycopg2.connect(
+#     host = "localhost",
+#     user = "postgres",
+#     database = "waterdata",
+#     password = "2006",
+#     port = 5432
+# )
 
-cursor = connection.cursor()
+# cursor = connection.cursor()
 
-#statements
-# cursor.execute("CREATE DATABASE waterdata;")
-cursor.execute("CREATE TABLE IF NOT EXISTS water_quality (id SERIAL PRIMARY KEY, place VARCHAR(100), ph VARCHAR(100), tds VARCHAR(100), hardness VARCHAR(100), nitrate VARCHAR(100));")
+# #statements
+# # cursor.execute("CREATE DATABASE waterdata;")
+# cursor.execute("CREATE TABLE IF NOT EXISTS water_quality (id SERIAL PRIMARY KEY, place VARCHAR(100), ph VARCHAR(100), tds VARCHAR(100), hardness VARCHAR(100), nitrate VARCHAR(100));")
 
-table = pd.read_sql("SELECT * FROM water_quality;", connection)
-print(table)
+# table = pd.read_sql("SELECT * FROM water_quality;", connection)
+# print(table)
 
-import requests
+# import requests
 
 # url = "https://aikosha-api.indiaai.gov.in/akp/idp/api/v1/dataset-public/download-dataset?datasetIdentifier=jjm_water_source_water_quality_data&versionNumber=1'"
 # response = requests.get(url)
@@ -44,7 +44,7 @@ import requests
     # ))
 
 def findMatch(location):
-    with open('book2.csv', mode='r', newline='') as csvfile:
+    with open('book21.csv', mode='r', newline='') as csvfile:
         spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
         for row in spamreader:
             if row[3] == location:
@@ -63,7 +63,8 @@ def findMatch(location):
 #     cell = sheet.cell(row=i, column=j)
 #     print(cell)
 
-connection.commit()
 
-cursor.close()
-connection.close()
+# connection.commit()
+
+# cursor.close()
+# connection.close()
