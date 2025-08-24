@@ -6,7 +6,7 @@ def findMatch(state,district,county):
     state = state.lower()
     district = district.lower()
     county = county.lower()
-    print(district)
+    print(state, district, county)
     path = "book1.xlsx"
     wb = openpyxl.load_workbook(path)
     sheet = wb.active
@@ -14,8 +14,8 @@ def findMatch(state,district,county):
         reqLoc=[]
         s = sheet.cell(row=i, column=2).value.strip().lower()
         d = sheet.cell(row=i, column=3).value.strip().lower()
-        c = sheet.cell(row=i, column=4).value.strip().lower().split()[0]
-        #print(c, 'and', county)
+        c = sheet.cell(row=i, column=4).value.strip().lower()
+        print(c, 'and', county)
         # if state==s and district==d and county==c:
         #     print("found state and district.")
         #     break
@@ -26,7 +26,7 @@ def findMatch(state,district,county):
                 reqLoc.append(cell.value)
                 print(cell.value)
             break
-        workingmodelwithnotmanualinput.app(reqLoc)
+    print(reqLoc)
     return reqLoc
 
 
